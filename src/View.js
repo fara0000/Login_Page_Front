@@ -6,8 +6,7 @@ class View {
     }
 
     init = () => {
-        const modalWindow = new ModalWindow();
-        modalWindow.init();
+      
     }
 }
 
