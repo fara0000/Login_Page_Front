@@ -5,6 +5,7 @@ export default class AutoPage {
     }
 
     init = () => {
+        const container_login_page = this.createDiv({class: 'container_login_page'})
         const login_heading = this.createHeading({class: 'login_heading'});
         const input_login = this.createInput({id: 'input_login', type: 'email', placeholder: 'Enter your email...'})
         const input_password = this.createInput({id: 'input_password', type: 'password', placeholder: 'Enter your password...'})
@@ -16,12 +17,25 @@ export default class AutoPage {
         button.innerHTML = 'Submit'
         registration_p.innerHTML = 'Not registered? '
         registration_link.innerHTML = '  Create an account'
-        this._root.appendChild(login_heading);
-        this._root.appendChild(input_login);
-        this._root.appendChild(input_password);
-        this._root.appendChild(button);
-        this._root.appendChild(registration_p);
+        this._root.appendChild(container_login_page)
+        container_login_page.appendChild(login_heading);
+        container_login_page.appendChild(input_login);
+        container_login_page.appendChild(input_password);
+        container_login_page.appendChild(button);
+        container_login_page.appendChild(registration_p);
         registration_p.appendChild(registration_link);
+    }
+
+    createDiv = params => {
+        const div = document.createElement('div');
+    
+        div.setAttribute('class', params.class);
+        params.id && (div.id = params.id);
+        params.title && (div.title = params.title);
+        params.textContent && (div.textContent = params.textContent);
+        params.inner && (div.innerHTML = params.inner);
+    
+        return div;
     }
     
     createHeading = params => {
