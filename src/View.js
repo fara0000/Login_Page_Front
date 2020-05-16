@@ -1,14 +1,16 @@
 import AutoPage from './AutoPage';
+
 class View {
     constructor () {
         this._root = document.querySelector('div#root');
     }
+
     init = () => {
-        autopage();
+        this.autopage();
     }
+
     autopage = () => {
-        const autopage = new AutoPage ();
-        autoPage.init();
+        const autopage = new AutoPage();
     }
 }
 export default View;

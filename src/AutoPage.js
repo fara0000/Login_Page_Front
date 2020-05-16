@@ -1,14 +1,16 @@
 export default class AutoPage {
     constructor () {
         this._root = document.querySelector('#root');
+        this.init();
     }
+
     init = () => {
-        const login_heading = createHeading({class: 'login_heading'});
-        const input_login = createInput({id: 'input_login', type: 'email', placeholder: 'Enter your email...'})
-        const input_password = createInput({id: 'input_password', type: 'password', placeholder: 'Enter your password...'})
-        const button = createButton({class: 'button'})
-        const registration_p = createParagraph({class: 'registration_p'})
-        const registration_link = createLink({class: 'registration_link'})
+        const login_heading = this.createHeading({class: 'login_heading'});
+        const input_login = this.createInput({id: 'input_login', type: 'email', placeholder: 'Enter your email...'})
+        const input_password = this.createInput({id: 'input_password', type: 'password', placeholder: 'Enter your password...'})
+        const button = this.createButton({class: 'button'})
+        const registration_p = this.createParagraph({class: 'registration_p'})
+        const registration_link = this.createLink({class: 'registration_link'})
         
         login_heading.innerHTML = 'SIGN IN'
         button.innerHTML = 'Submit'
@@ -68,8 +70,6 @@ export default class AutoPage {
         return link;
     }
 }
-// const autopage = new AutoPage();
 
-// export default autopage
 
 
