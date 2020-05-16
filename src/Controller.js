@@ -10,19 +10,12 @@ class Controller {
 
     init =()=> {
         this._view.init();
-        this._view.getDataFromInput(this.getInputValue.bind(this));
+        this._view.getDataFromInput(this.checkInsertedData.bind(this));
         
     }
 
-    getInputValue = person =>{
-        if (!person) {
-            return;
-        }
+    checkInsertedData = person =>{
         
-        this.data = this._model.getDataFromModel();
-        this.data.push(person);
-       
-       console.log(this.data);
     }
 }
 export default Controller;
