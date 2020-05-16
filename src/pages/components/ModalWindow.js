@@ -6,10 +6,10 @@ export default class ModalWindow {
     init = () => {
         const modal_div = this.createDiv({class: 'modal_div'});
         const heading_div = this.createDiv({class: 'heading_div'});
-        const welcome_heading = this.createDiv({class: 'h3'});
+        const welcome_heading = this.createParagraph({class: 'welcome_heading'});
         welcome_heading.innerHTML = `${name} WELCOME TO OUR PAGE!`;
         const input_div = this.createDiv({class: 'input_div'});
-        const password_input = this.createDiv({class: 'password_input', type: 'password', placeholder: '  CONFIRM YOUR PASSWORD'});
+        const password_input = this.createInput({class: 'password_input', type: 'password', placeholder: '  CONFIRM YOUR PASSWORD'});
         const confirm_button = this.createDiv({class: 'confirm_button'});
         confirm_button.innerHTML = 'SIGN IN';
 
@@ -55,6 +55,17 @@ export default class ModalWindow {
 
     createDiv = params => {
         const input = document.createElement('div');
+    
+        input.setAttribute('class', params.class);
+        params.id && (input.id = params.id);
+        params.type && (input.type = params.type);
+        params.title && (input.title = params.title);
+    
+        return input;
+    }
+
+    createParagraph = params => {
+        const input = document.createElement('h3');
     
         input.setAttribute('class', params.class);
         params.id && (input.id = params.id);
