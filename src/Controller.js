@@ -5,7 +5,7 @@ class Controller {
         
     }
     init = () => {
-        
+        this._view.init();
     }
 }
 export default Controller;
