@@ -1,16 +1,16 @@
-class ModalWindow {
+export default class ModalWindow {
     constructor () {
         this._root = document.querySelector('#root');
     }
 
     init = () => {
-        const modal_div = createDiv({class: 'modal_div'});
-        const heading_div = createDiv({class: 'heading_div'});
-        const welcome_heading = createDiv({class: 'h3'});
+        const modal_div = this.createDiv({class: 'modal_div'});
+        const heading_div = this.createDiv({class: 'heading_div'});
+        const welcome_heading = this.createDiv({class: 'h3'});
         welcome_heading.innerHTML = `${name} WELCOME TO OUR PAGE!`;
-        const input_div = createDiv({class: 'input_div'});
-        const password_input = createDiv({class: 'password_input', type: 'password', placeholder: '  CONFIRM YOUR PASSWORD'});
-        const confirm_button = createDiv({class: 'confirm_button'});
+        const input_div = this.createDiv({class: 'input_div'});
+        const password_input = this.createDiv({class: 'password_input', type: 'password', placeholder: '  CONFIRM YOUR PASSWORD'});
+        const confirm_button = this.createDiv({class: 'confirm_button'});
         confirm_button.innerHTML = 'SIGN IN';
 
         this._root.appendChild(modal_div);
@@ -64,6 +64,3 @@ class ModalWindow {
         return input;
     }
 }
-
-const modalWindow = new ModalWindow();
-export default modalWindow;

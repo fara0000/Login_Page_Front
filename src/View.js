@@ -1,4 +1,4 @@
-import modalWindow from './ModalWindow';
+import ModalWindow from './pages/components/ModalWindow';
 
 class View {
     constructor () {
@@ -6,6 +6,7 @@ class View {
     }
 
     init = () => {
+        const modalWindow = new ModalWindow();
         modalWindow.init();
     }
 }
