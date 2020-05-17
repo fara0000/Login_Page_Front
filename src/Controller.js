@@ -12,7 +12,7 @@ class Controller {
     }
 
     checkInsertedData = person =>{
-        
+
     }
 }
 export default Controller;

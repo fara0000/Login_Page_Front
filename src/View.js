@@ -1,4 +1,5 @@
 import Regpage from './RegPage';
+import ModalWindow from './pages/components/ModalWindow';
 
 class View {
     constructor () {
@@ -11,6 +12,10 @@ init = () => {
 
 regpage = () => {
     const regpage = new Regpage();
+    }
+
+    init = () => {
+      
     }
 }
 

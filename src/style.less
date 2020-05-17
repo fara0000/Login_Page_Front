@@ -1,8 +1,12 @@
+@import (css) url(https://fonts.googleapis.com/css?family=Roboto:300);
+
 * {
     box-sizing:border-box;
     margin: 0;
     padding: 0;
+    user-select: none;  
 }
+
 html{
     width: 100%;
     height: 100%;
@@ -11,8 +15,8 @@ html{
 
 body { 
 	width: 100%;
-	height:100%;
-	font-family: 'Open Sans', sans-serif;
+  height:100%;
+  font-family: "Roboto", sans-serif;
 	background: #092756;
 	background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%),-moz-linear-gradient(top,  rgba(57,173,219,.25) 0%, rgba(42,60,87,.4) 100%), -moz-linear-gradient(-45deg,  #670d10 0%, #092756 100%);
 	background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -webkit-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -webkit-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
@@ -22,47 +26,10 @@ body {
     color: #ffffff;
 }
 
-
 #root {
     display: flex;
     justify-content: center;
 }
-
-.wrapper{ 
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.wrapper__nameInputField {
-    width: 100px;
-    height: 40px;
-    border: 3px solid red;
-}
-
-.wrapper__mailInputField {
-    width: 100px;
-    height: 40px;
-    border: 3px solid red;
-}
-
-.wrapper__passwordInputField {
-    width: 100px;
-    height: 40px;
-    border: 3px solid red;
-}
-
-.wrapper__confirmPassInputField {
-    width: 100px;
-    height: 40px;
-    border: 3px solid red;
-}
-
-.wrapper__button {
-    width: 100px;
-    height: 20px;
-}
-
 
 .registration {
     margin: 200px auto;
@@ -112,5 +79,3 @@ form{
     transform: scale(1.1, 1.1);
     cursor: pointer;
 }
-
-
