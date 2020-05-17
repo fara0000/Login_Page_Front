@@ -6,7 +6,6 @@ export default class Regpage {
         this.passwordInput = null;
         this.confirmPassword = null;
         this.button = null;
-        this.init();
     }
 
     init = () => {
