@@ -1,7 +1,9 @@
 import Model from "./Model.js";
 import View from "./View.js";
 import Controller from "./Controller.js";
-import './style.less';
+import './pages/AutoPage/styles.less';
+import './pages/RegPage/styles.less';
+import './pages/ModalWindow/styles.less';
 
 function initialize() {
     const model = new Model(); 
