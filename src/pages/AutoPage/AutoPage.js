@@ -1,3 +1,4 @@
+import RegPage from '../RegPage/RegPage';
 export default class AutoPage {
     constructor () {
         this._root = document.querySelector('#root');
@@ -11,6 +12,10 @@ export default class AutoPage {
         const button = this.createButton({class: 'button'})
         const registration_p = this.createParagraph({class: 'registration_p'})
         const registration_link = this.createLink({class: 'registration_link'})
+        registration_link.addEventListener('click', () => {
+            container_login_page.remove();
+            this._root.appendChild(registration)
+        })
         
         login_heading.innerHTML = 'SIGN IN'
         button.innerHTML = 'Submit'

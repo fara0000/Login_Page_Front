@@ -11,17 +11,18 @@ export default class RegPage {
     init = () => {
         const registration = this.createDiv({class: 'registration'})
         const title = document.createElement('h1');
+        const form = document.createElement('form');
+
         title.setAttribute("class", "registration__title");
         title.innerHTML = ("Registration page");
-        const form = document.createElement('form');
         form.setAttribute("class", "registration__form");
         this.nameInput = this.createInput({class: 'registration__params', type: 'text', placeholder: 'Enter your name ( Elnur )'});
         this.emailInput = this.createInput({class: 'registration__params', type: 'email', placeholder: 'Enter your email ( example@domain.com )'});
         this.passwordInput = this.createInput({class: 'registration__params', type: 'password', placeholder: 'Create your password...'});
         this.confirmPassword = this.createInput({class: 'registration__params', type: 'password', placeholder: 'Confirm your password...'});
         this.button = this.createButton({class: 'registration__submit', type: 'submit', inner: 'Register'});
-
         this._root.appendChild(registration);
+
         registration.appendChild(title);
         registration.appendChild(form);
         form.appendChild(this.nameInput);
@@ -45,6 +46,7 @@ export default class RegPage {
     
     createHeading = params => {
         const heading = document.createElement('h1');        
+        
         heading.setAttribute('class', params.class);
         params.inner && (heading.innerHTML = params.inner);
     
@@ -76,6 +78,7 @@ export default class RegPage {
 
     createParagraph = params => {
         const paragraph = document.createElement('p');        
+        
         paragraph.setAttribute('class', params.class);
         params.inner && (paragraph.innerHTML = params.inner);
     
@@ -84,6 +87,7 @@ export default class RegPage {
 
     createLink = params => {
         const link = document.createElement('a');        
+        
         link.setAttribute('class', params.class);
         params.inner && (link.innerHTML = params.inner);
     
