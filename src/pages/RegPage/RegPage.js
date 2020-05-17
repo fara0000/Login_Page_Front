@@ -1,3 +1,4 @@
+import ModalPage from '../ModalWindow/ModalWindow';
 export default class RegPage {
     constructor () {
         this._root = document.querySelector('#root');
@@ -11,6 +12,8 @@ export default class RegPage {
     init = () => {
         const registration = this.createDiv({class: 'registration'})
         const title = document.createElement('h1');
+        const form = document.createElement('form');
+
         title.setAttribute("class", "registration__title");
         title.innerHTML = ("Registration page");
         const form = document.createElement('form');
@@ -20,7 +23,11 @@ export default class RegPage {
         this.passwordInput = this.createInput({class: 'registration__params', type: 'password', placeholder: 'Create your password...'});
         this.confirmPassword = this.createInput({class: 'registration__params', type: 'password', placeholder: 'Confirm your password...'});
         this.button = this.createButton({class: 'registration__submit', type: 'submit', inner: 'Register'});
-
+        this.button.addEventListener('click', () => {
+            registration.remove()
+            const modal = new ModalPage()
+            modal.init();
+        });
         this._root.appendChild(registration);
         registration.appendChild(title);
         registration.appendChild(form);
