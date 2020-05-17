@@ -20,7 +20,9 @@ export default class RegPage {
         this.emailInput = this.createInput({class: 'registration__params', type: 'email', placeholder: 'Enter your email ( example@domain.com )'});
         this.passwordInput = this.createInput({class: 'registration__params', type: 'password', placeholder: 'Create your password...'});
         this.confirmPassword = this.createInput({class: 'registration__params', type: 'password', placeholder: 'Confirm your password...'});
-        this.button = this.createButton({class: 'registration__submit', type: 'submit', inner: 'Register'});
+        this.button = this.createInput({class: 'registration__submit', type: 'submit'});
+        this.button.setAttribute('value', 'Register');
+        this.button.setAttribute('disabled', 'true');
         this.button.addEventListener('click', () => {
             registration.remove()
             const modal = new ModalPage()
