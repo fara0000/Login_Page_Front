@@ -1,29 +1,34 @@
-export default class AutoPage {
+export default class RegPage {
     constructor () {
         this._root = document.querySelector('#root');
-        this.init();
+        this.nameInput = null;
+        this.emailInput = null;
+        this.passwordInput = null;
+        this.confirmPassword = null;
+        this.button = null;
     }
 
     init = () => {
-        const container_login_page = this.createDiv({class: 'container_login_page'})
-        const login_heading = this.createHeading({class: 'login_heading'});
-        const input_login = this.createInput({id: 'input_login', type: 'email', placeholder: 'Enter your email...'})
-        const input_password = this.createInput({id: 'input_password', type: 'password', placeholder: 'Enter your password...'})
-        const button = this.createButton({class: 'button'})
-        const registration_p = this.createParagraph({class: 'registration_p'})
-        const registration_link = this.createLink({class: 'registration_link'})
-        
-        login_heading.innerHTML = 'SIGN IN'
-        button.innerHTML = 'Submit'
-        registration_p.innerHTML = 'Not registered? '
-        registration_link.innerHTML = '  Create an account'
-        this._root.appendChild(container_login_page)
-        container_login_page.appendChild(login_heading);
-        container_login_page.appendChild(input_login);
-        container_login_page.appendChild(input_password);
-        container_login_page.appendChild(button);
-        container_login_page.appendChild(registration_p);
-        registration_p.appendChild(registration_link);
+        const registration = this.createDiv({class: 'registration'})
+        const title = document.createElement('h1');
+        title.setAttribute("class", "registration__title");
+        title.innerHTML = ("Registration page");
+        const form = document.createElement('form');
+        form.setAttribute("class", "registration__form");
+        this.nameInput = this.createInput({class: 'registration__params', type: 'text', placeholder: 'Enter your name ( Elnur )'});
+        this.emailInput = this.createInput({class: 'registration__params', type: 'email', placeholder: 'Enter your email ( example@domain.com )'});
+        this.passwordInput = this.createInput({class: 'registration__params', type: 'password', placeholder: 'Create your password...'});
+        this.confirmPassword = this.createInput({class: 'registration__params', type: 'password', placeholder: 'Confirm your password...'});
+        this.button = this.createButton({class: 'registration__submit', type: 'submit', inner: 'Register'});
+
+        this._root.appendChild(registration);
+        registration.appendChild(title);
+        registration.appendChild(form);
+        form.appendChild(this.nameInput);
+        form.appendChild(this.emailInput);
+        form.appendChild(this.passwordInput);
+        form.appendChild(this.confirmPassword);
+        registration.appendChild(this.button);
     }
 
     createDiv = params => {
@@ -52,6 +57,7 @@ export default class AutoPage {
         button.setAttribute('class',params.class);
         params.id && (button.id = params.id);
         params.inner && (button.innerHTML = params.inner);
+        params.type && (button.type = params.type);
         params.onclick && (button.onclick = params.onclick);
     
         return button;
@@ -84,6 +90,3 @@ export default class AutoPage {
         return link;
     }
 }
-
-
-

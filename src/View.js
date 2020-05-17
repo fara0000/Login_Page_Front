@@ -1,5 +1,6 @@
-import Regpage from './RegPage';
-import ModalWindow from './pages/components/ModalWindow';
+import AutoPage from './pages/AutoPage/AutoPage';
+import RegPage from './pages/RegPage/RegPage';
+import ModalWindow from './pages/ModalWindow/ModalWindow';
 
 class View {
     constructor () {
@@ -7,16 +8,18 @@ class View {
 }
 
 init = () => {
-    this.regpage();
+
+    const autoPage = new AutoPage();
+    autoPage.init();
+
+    // const regPage = new RegPage();
+    // regPage.init();
+
+    // const modalWindow = new ModalWindow();
+    // modalWindow.init();
 }
 
-regpage = () => {
-    const regpage = new Regpage();
-    }
 
-    init = () => {
-      
-    }
 }
 
 export default View;
