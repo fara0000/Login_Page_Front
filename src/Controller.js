@@ -4,18 +4,14 @@ class Controller {
         this._view = view;
         this.data = null;
     }
-    init = () => {
-        
-    }
 
-    init =()=> {
+    init = () => {
         this._view.init();
         this._view.getDataFromInput(this.checkInsertedData.bind(this));
         
     }
-
     checkInsertedData = person =>{
-        
+
     }
 }
 export default Controller;
