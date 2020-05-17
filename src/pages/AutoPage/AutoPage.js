@@ -25,6 +25,19 @@ export default class AutoPage {
         registration_p.innerHTML = 'Not registered? ';
         registration_link.innerHTML = '  Create an account';
         this._root.appendChild(container_login_page);
+        const container_login_page = this.createDiv({class: 'container_login_page'})
+        const login_heading = this.createHeading({class: 'login_heading'});
+        const input_login = this.createInput({id: 'input_login', type: 'email', placeholder: 'Enter your email...'})
+        const input_password = this.createInput({id: 'input_password', type: 'password', placeholder: 'Enter your password...'})
+        const button = this.createButton({class: 'button'})
+        const registration_p = this.createParagraph({class: 'registration_p'})
+        const registration_link = this.createLink({class: 'registration_link'})
+        
+        login_heading.innerHTML = 'SIGN IN'
+        button.innerHTML = 'Submit'
+        registration_p.innerHTML = 'Not registered? '
+        registration_link.innerHTML = '  Create an account'
+        this._root.appendChild(container_login_page)
         container_login_page.appendChild(login_heading);
         container_login_page.appendChild(input_login);
         container_login_page.appendChild(input_password);
