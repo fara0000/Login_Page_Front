@@ -1,4 +1,4 @@
-import AutoPage from './AutoPage';
+import ModalWindow from './pages/components/ModalWindow';
 
 class View {
     constructor () {
@@ -6,11 +6,8 @@ class View {
     }
 
     init = () => {
-        this.autopage();
-    }
-
-    autopage = () => {
-        const autopage = new AutoPage();
+      
     }
 }
+
 export default View;
