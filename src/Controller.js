@@ -7,12 +7,15 @@ class Controller {
 
     init = () => {
         this._view.init();
-        // this._view.getDataFromInput(this.checkInsertedData.bind(this));
+        this._view.getData(this.checkInsertedData.bind(this));
         
     }
 
-    // checkInsertedData = person =>{
+    checkInsertedData = person =>{
+        if(!person) return;
 
-    // }
+        console.log(person);
+        
+    }
 }
 export default Controller;

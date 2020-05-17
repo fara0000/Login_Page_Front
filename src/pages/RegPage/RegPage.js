@@ -7,6 +7,7 @@ export default class RegPage {
         this.passwordInput = null;
         this.confirmPassword = null;
         this.button = null;
+        this.person = null;
     }
 
     init = () => {
@@ -24,8 +25,9 @@ export default class RegPage {
         this.button.setAttribute('value', 'Register');
         this.button.setAttribute('disabled', 'true');
         this.button.addEventListener('click', () => {
-            registration.remove()
-            const modal = new ModalPage()
+            this.getInputValue;
+            registration.remove();
+            const modal = new ModalPage();
             modal.init();
         });
         this._root.appendChild(registration);
@@ -95,5 +97,20 @@ export default class RegPage {
         params.inner && (link.innerHTML = params.inner);
     
         return link;
+    }
+
+    getInputValue = () => {
+
+        this.person = {
+            name: this.nameInput.value,
+            email:this.emailInput.value,
+            password:this.passwordInput.value,
+            confirmPassword:this.confirmPassword.value,
+        }
+
+        console.log(this.person);
+        
+        
+        return this.person;
     }
 }

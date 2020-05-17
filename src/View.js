@@ -10,8 +10,15 @@ class View {
     init = () => {        
         const autoPage = new AutoPage();
         autoPage.init();
+        const regPage = new RegPage();
+        regPage.getInputValue(this.getData.bind(this));
     }
 
+    getData = cb => {
+        // regPage.getInputValue();
+
+        cb(this.person);
+    }
 
 }
 
