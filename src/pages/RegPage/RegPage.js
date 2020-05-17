@@ -10,10 +10,8 @@ export default class RegPage {
     }
 
     init = () => {
-        const registration = this.createDiv({class: 'registration'})
+        const registration = this.createDiv({class: 'registration'});
         const title = document.createElement('h1');
-        const form = document.createElement('form');
-
         title.setAttribute("class", "registration__title");
         title.innerHTML = ("Registration page");
         const form = document.createElement('form');
