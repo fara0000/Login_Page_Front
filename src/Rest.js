@@ -5,11 +5,10 @@ export const sendGetRequest = cb => {
     xhr.setRequestHeader("Content-type", "application-json");
     xhr.send();
 
-
     xhr.onload = function() {
-        if (xhr.status != 200) { 
+        if (xhr.status != 200) {
             console.log(xhr.statusText);
-        } else { 
+        } else {
             const data = JSON.parse(xhr.response);
             console.log(data);
             cb(data);

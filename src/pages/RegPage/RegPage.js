@@ -1,9 +1,9 @@
 import ModalPage from '../ModalWindow/ModalWindow';
 import * as construct from '../../construct/constructs.js';
-
 export default class RegPage {
     constructor () {
         this._root = document.querySelector('div#root');
+        this.registration = null;
         this.nameInput = null;
         this.emailInput = null;
         this.passwordInput = null;
@@ -13,12 +13,14 @@ export default class RegPage {
     }
 
     init = () => {
-        const registration = construct.createDiv({class: 'registration'});
+        this.registration = construct.createDiv({
+        class: 'registration'
+        });
         const title = document.createElement('h1');
-        title.setAttribute("class", "registration__title");
+        title.setAttribute('class', 'registration__title');
         title.innerHTML = ("Registration Page");
         const form = document.createElement('form');
-        form.setAttribute("class", "registration__form");
+        form.setAttribute('class', 'registration__form');
         this.nameInput = construct.createInput({
             id:'nameInput',
             class: 'registration__params',
@@ -75,19 +77,15 @@ export default class RegPage {
         });
         this.button.setAttribute('value', 'REGISTER');
         this.button.setAttribute('disabled', 'true');
-        this.button.addEventListener('dblclick', () => {
-            this._root.removeChild(registration);
-            this._root.appendChild(this.modal.init());
-        })
 
-        this._root.appendChild(registration);
-        registration.appendChild(title);
-        registration.appendChild(form);
+        this._root.appendChild(this.registration);
+        this.registration.appendChild(title);
+        this.registration.appendChild(form);
         form.appendChild(this.nameInput);
         form.appendChild(this.emailInput);
         form.appendChild(this.passwordInput);
         form.appendChild(this.confirmPassword);
-        registration.appendChild(this.button);
+        this.registration.appendChild(this.button);
     }
 
     getRegInputValue = cb => {
@@ -98,9 +96,13 @@ export default class RegPage {
                 password: this.passwordInput.value,
                 confirmPassword: confirmPassword.value,
             }
-
             cb(person);
+            this.getModalWindow();
         })
+    }
 
+    getModalWindow = () => {
+            this._root.removeChild(this.registration);
+            this._root.appendChild(this.modal.init());
     }
 }

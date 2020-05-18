@@ -5,13 +5,27 @@ export default class ModalWindow {
     }
 
     init = () => {
-        const modal_div = construct.createDiv({class: 'modal_div'});
-        const heading_div = construct.createDiv({class: 'heading_div'});
-        const welcome_heading = construct.createParagraph({class: 'welcome_heading'});
+        const modal_div = construct.createDiv({
+        class: 'modal_div'
+        });
+        const heading_div = construct.createDiv({
+        class: 'heading_div'
+        });
+        const welcome_heading = construct.createParagraph({
+        class: 'welcome_heading'
+        });
         welcome_heading.innerHTML = `${name} WELCOME TO OUR PAGE!`;
-        const input_div = construct.createDiv({class: 'input_div'});
-        const password_input = construct.createInput({class: 'password_input', type: 'password', placeholder: '  CONFIRM YOUR PASSWORD'});
-        const confirm_button = construct.createDiv({class: 'confirm_button'});
+        const input_div = construct.createDiv({
+        class: 'input_div'
+        });
+        const password_input = construct.createInput({
+        class: 'password_input',
+        type: 'password',
+        placeholder: 'Confirm your password...'
+        });
+        const confirm_button = construct.createDiv({
+        class: 'confirm_button'
+        });
         confirm_button.innerHTML = 'SIGN IN';
 
         this._root.appendChild(modal_div);

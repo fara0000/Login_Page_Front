@@ -8,7 +8,7 @@ class View {
         this.authPage = new AutoPage();
     }
 
-    init = () => {        
+    init = () => {
         this.authPage.init();
         this.authPage.clickRegistration(this.initRegPage.bind(this));
     }

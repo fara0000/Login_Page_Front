@@ -13,13 +13,31 @@ export default class AutoPage {
     }
 
     init = () => {
-        this._container_login_page = construct.createDiv({class: 'container_login_page'});
-        this._login_heading = construct.createHeading({class: 'login_heading'});
-        this._input_login = construct.createInput({id: 'input_login', type: 'email', placeholder: 'Enter your email...'});
-        this._input_password = construct.createInput({id: 'input_password', type: 'password', placeholder: 'Enter your password...'});
-        this._button = construct.createButton({class: 'button'});
-        this._registration_p = construct.createParagraph({class: 'registration_p'});
-        this._registration_link = construct.createLink({class: 'registration_link'});
+        this._container_login_page = construct.createDiv({
+        class: 'container_login_page'
+        });
+        this._login_heading = construct.createHeading({
+        class: 'login_heading'
+        });
+        this._input_login = construct.createInput({
+        id: 'input_login',
+        type: 'email',
+        placeholder: 'Enter your email...'
+        });
+        this._input_password = construct.createInput({
+        id: 'input_password',
+        type: 'password',
+        placeholder: 'Enter your password...'
+        });
+        this._button = construct.createButton({
+        class: 'button'
+        });
+        this._registration_p = construct.createParagraph({
+        class: 'registration_p'
+        });
+        this._registration_link = construct.createLink({
+        class: 'registration_link'
+        });
 
         this._login_heading.innerHTML = 'Sign In';
         this._button.innerHTML = 'Submit';
