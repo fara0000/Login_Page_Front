@@ -18,17 +18,16 @@ export default class RegPage {
         title.innerHTML = ("Registration page");
         const form = document.createElement('form');
         form.setAttribute("class", "registration__form");
-        this.nameInput = construct.createInput({class: 'registration__params', type: 'text', placeholder: 'Enter your name ( Elnur )'});
-        this.emailInput = construct.createInput({class: 'registration__params', type: 'email', placeholder: 'Enter your email ( example@domain.com )'});
-        this.passwordInput = construct.createInput({class: 'registration__params', type: 'password', placeholder: 'Create your password...'});
-        this.confirmPassword = construct.createInput({class: 'registration__params', type: 'password', placeholder: 'Confirm your password...'});
+        this.nameInput = construct.createInput({id:'nameInput', class: 'registration__params', type: 'text', placeholder: 'Enter your name ( Elnur )'});
+        this.emailInput = construct.createInput({id:'emailInput', class: 'registration__params', type: 'email', placeholder: 'Enter your email ( example@domain.com )'});
+        this.passwordInput = construct.createInput({id:'passwordInput', class: 'registration__params', type: 'password', placeholder: 'Create your password...'});
+        this.confirmPassword = construct.createInput({id:'confirmPassword', class: 'registration__params', type: 'password', placeholder: 'Confirm your password...'});
         this.button = construct.createInput({class: 'registration__submit', type: 'submit'});
         this.button.setAttribute('value', 'Register');
         this.button.setAttribute('disabled', 'true');
         this.button.addEventListener('click', () => {
-            registration.remove()
-            const modal = new ModalPage()
-            modal.init();
+            this.getRegInputValue();
+            // this.changePage();
         });
         this._root.appendChild(registration);
         registration.appendChild(title);
@@ -38,6 +37,32 @@ export default class RegPage {
         form.appendChild(this.passwordInput);
         form.appendChild(this.confirmPassword);
         registration.appendChild(this.button);
+    }
+
+    changePage = () => {
+        registration.remove()
+        const modal = new ModalPage()
+        modal.init();
+    };
+
+    getRegInputValue = cb => {
+        const name = document.querySelector('input#nameInput').value;
+        const email = document.querySelector('input#emailInput').value;
+        const password = document.querySelector('input#passwordInput').value;
+        const confirmPassword = document.querySelector('input#confirmPassword').value;
+
+        console.log(name);
+        
+        const person = {
+            name,
+            email,
+            password,
+            confirmPassword,
+        };
+        
+        console.log(person);
+        
+        cb(person);
     }
    
 }
