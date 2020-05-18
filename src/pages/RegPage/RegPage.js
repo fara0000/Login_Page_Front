@@ -18,12 +18,37 @@ export default class RegPage {
         title.innerHTML = ("Registration page");
         const form = document.createElement('form');
         form.setAttribute("class", "registration__form");
-        this.nameInput = construct.createInput({id:'nameInput', class: 'registration__params', type: 'text', placeholder: 'Enter your name ( Elnur )'});
-        this.emailInput = construct.createInput({id:'emailInput', class: 'registration__params', type: 'email', placeholder: 'Enter your email ( example@domain.com )'});
-        this.passwordInput = construct.createInput({id:'passwordInput', class: 'registration__params', type: 'password', placeholder: 'Create your password...'});
-        this.confirmPassword = construct.createInput({id:'confirmPassword', class: 'registration__params', type: 'password', placeholder: 'Confirm your password...'});
-        this.button = construct.createInput({id:'regButton',class: 'registration__submit', type: 'submit'});
-        this.button.setAttribute('value', 'Register');
+        this.nameInput = construct.createInput({
+          id:'nameInput',
+          class: 'registration__params',
+          type: 'text',
+          placeholder: 'Enter your name'
+        });
+        this.emailInput = construct.createInput({
+          id:'emailInput',
+          class: 'registration__params',
+          type: 'email',
+          placeholder: 'Enter your email'
+        });
+        this.passwordInput = construct.createInput({
+          id:'passwordInput',
+          class: 'registration__params',
+          type: 'password',
+          placeholder: 'Create your password...'
+        });
+        this.confirmPassword = construct.createInput({
+          id:'confirmPassword',
+          class: 'registration__params',
+          type: 'password',
+          placeholder: 'Confirm your password...'
+        });
+        this.button = construct.createInput({
+          id:'regButton',
+          class: 'registration__submit',
+          type: 'submit'
+        });
+        this.button.setAttribute('value', 'REGISTER');
+
         this._root.appendChild(registration);
         registration.appendChild(title);
         registration.appendChild(form);
@@ -42,9 +67,9 @@ export default class RegPage {
                 password: this.passwordInput.value,
                 confirmPassword: confirmPassword.value,
             }
-            
+
             cb(person);
-            
+
         })
 
     }
