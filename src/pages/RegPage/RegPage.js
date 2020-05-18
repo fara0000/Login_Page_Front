@@ -24,11 +24,21 @@ export default class RegPage {
           type: 'text',
           placeholder: 'Enter your name'
         });
+        this.nameInput.addEventListener('keyup', () => {
+            if(this.nameInput.value.length > 2) {
+                this.nameInput.style.borderColor = 'green';
+            } else this.nameInput.style.borderColor = 'red';
+        });
         this.emailInput = construct.createInput({
           id:'emailInput',
           class: 'registration__params',
           type: 'email',
           placeholder: 'Enter your email'
+        });
+        this.emailInput.addEventListener('keyup', () => {
+            if(this.emailInput.value.length > 10) {
+                this.emailInput.style.borderColor = 'green';
+            } else this.emailInput.style.borderColor = 'red';
         });
         this.passwordInput = construct.createInput({
           id:'passwordInput',
@@ -36,11 +46,21 @@ export default class RegPage {
           type: 'password',
           placeholder: 'Create your password...'
         });
+        this.passwordInput.addEventListener('keyup', () => {
+            if(this.passwordInput.value.length > 6) {
+                this.passwordInput.style.borderColor = 'green';
+            } else this.passwordInput.style.borderColor = 'red';
+        });
         this.confirmPassword = construct.createInput({
           id:'confirmPassword',
           class: 'registration__params',
           type: 'password',
           placeholder: 'Confirm your password...'
+        });
+        this.confirmPassword.addEventListener('keyup', () => {
+            if(this.confirmPassword.value.length > 6) {
+                this.confirmPassword.style.borderColor = 'green';
+            } else this.confirmPassword.style.borderColor = 'red';
         });
         this.button = construct.createInput({
           id:'regButton',
@@ -69,7 +89,6 @@ export default class RegPage {
             }
 
             cb(person);
-
         })
 
     }
