@@ -15,7 +15,7 @@ export default class RegPage {
         const registration = construct.createDiv({class: 'registration'});
         const title = document.createElement('h1');
         title.setAttribute("class", "registration__title");
-        title.innerHTML = ("Registration page");
+        title.innerHTML = ("Registration Page");
         const form = document.createElement('form');
         form.setAttribute("class", "registration__form");
         this.nameInput = construct.createInput({

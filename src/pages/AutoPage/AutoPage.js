@@ -21,11 +21,11 @@ export default class AutoPage {
         this._registration_p = construct.createParagraph({class: 'registration_p'});
         this._registration_link = construct.createLink({class: 'registration_link'});
 
-        this._login_heading.innerHTML = 'SIGN IN';
+        this._login_heading.innerHTML = 'Sign In';
         this._button.innerHTML = 'Submit';
         this._registration_p.innerHTML = 'Not registered? ';
         this._registration_link.innerHTML = '  Create an account';
-        
+
         this._root.appendChild(this._container_login_page);
         this._container_login_page.appendChild(this._login_heading);
         this._container_login_page.appendChild(this._input_login);
