@@ -19,10 +19,10 @@ export default class RegPage {
         const form = document.createElement('form');
         form.setAttribute("class", "registration__form");
         this.nameInput = construct.createInput({
-          id:'nameInput',
-          class: 'registration__params',
-          type: 'text',
-          placeholder: 'Enter your name'
+            id:'nameInput',
+            class: 'registration__params',
+            type: 'text',
+            placeholder: 'Enter your name'
         });
         this.nameInput.addEventListener('keyup', () => {
             const username = /^[a-z\d]{3,12}$/i;
@@ -32,10 +32,10 @@ export default class RegPage {
             } else this.nameInput.style.borderColor = 'red';
         });
         this.emailInput = construct.createInput({
-          id:'emailInput',
-          class: 'registration__params',
-          type: 'email',
-          placeholder: 'Enter your email'
+            id:'emailInput',
+            class: 'registration__params',
+            type: 'email',
+            placeholder: 'Enter your email'
         });
         this.emailInput.addEventListener('keyup', () => {
             const email = /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})?$/;
@@ -44,10 +44,10 @@ export default class RegPage {
             } else this.emailInput.style.borderColor = 'red';
         });
         this.passwordInput = construct.createInput({
-          id:'passwordInput',
-          class: 'registration__params',
-          type: 'password',
-          placeholder: 'Create your password...'
+            id:'passwordInput',
+            class: 'registration__params',
+            type: 'password',
+            placeholder: 'Create your password...'
         });
         this.passwordInput.addEventListener('keyup', () => {
             const password = /^[\d\w@-]{8,20}$/i;
@@ -56,21 +56,20 @@ export default class RegPage {
             } else this.passwordInput.style.borderColor = 'red';
         });
         this.confirmPassword = construct.createInput({
-          id:'confirmPassword',
-          class: 'registration__params',
-          type: 'password',
-          placeholder: 'Confirm your password...'
+            id:'confirmPassword',
+            class: 'registration__params',
+            type: 'password',
+            placeholder: 'Confirm your password...'
         });
         this.confirmPassword.addEventListener('keyup', () => {
-            const secondPassword = /^[\d\w@-]{8,20}$/i;
-            if(this.confirmPassword.value.match(secondPassword)) {
+            if(this.confirmPassword.value === this.passwordInput.value) {
                 this.confirmPassword.style.borderColor = 'green';
             } else this.confirmPassword.style.borderColor = 'red';
         });
         this.button = construct.createInput({
-          id:'regButton',
-          class: 'registration__submit',
-          type: 'submit'
+            id:'regButton',
+            class: 'registration__submit',
+            type: 'submit'
         });
         this.button.setAttribute('value', 'REGISTER');
 
