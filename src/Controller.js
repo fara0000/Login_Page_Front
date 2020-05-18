@@ -1,10 +1,9 @@
-import RegPage from './pages/RegPage/RegPage';
+// import RegPage from './pages/RegPage/RegPage';
 
 class Controller {
-    constructor( model,regPage ) {
+    constructor( model, regPage) {
         this._model = model;
         this.regPage = regPage;
-        this.data = null;
     }
 
     init = () => {
@@ -15,7 +14,7 @@ class Controller {
     checkRegInsertData = person => {
         if(!person) return;
 
-        console.log(person);
+        console.log(person, 'done');
         
     }
 }

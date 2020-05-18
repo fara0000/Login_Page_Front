@@ -3,7 +3,7 @@ import * as construct from '../../construct/constructs.js';
 
 export default class RegPage {
     constructor () {
-        this._root = document.querySelector('#root');
+        this._root = document.querySelector('div#root');
         this.nameInput = null;
         this.emailInput = null;
         this.passwordInput = null;
@@ -22,13 +22,9 @@ export default class RegPage {
         this.emailInput = construct.createInput({id:'emailInput', class: 'registration__params', type: 'email', placeholder: 'Enter your email ( example@domain.com )'});
         this.passwordInput = construct.createInput({id:'passwordInput', class: 'registration__params', type: 'password', placeholder: 'Create your password...'});
         this.confirmPassword = construct.createInput({id:'confirmPassword', class: 'registration__params', type: 'password', placeholder: 'Confirm your password...'});
-        this.button = construct.createInput({class: 'registration__submit', type: 'submit'});
+        this.button = construct.createInput({id:'regButton',class: 'registration__submit', type: 'submit'});
         this.button.setAttribute('value', 'Register');
-        this.button.setAttribute('disabled', 'true');
-        this.button.addEventListener('click', () => {
-            this.getRegInputValue();
-            // this.changePage();
-        });
+        this.button.setAttribute('disabled', 'false');
         this._root.appendChild(registration);
         registration.appendChild(title);
         registration.appendChild(form);
@@ -39,30 +35,33 @@ export default class RegPage {
         registration.appendChild(this.button);
     }
 
-    changePage = () => {
-        registration.remove()
-        const modal = new ModalPage()
-        modal.init();
-    };
-
     getRegInputValue = cb => {
-        const name = document.querySelector('input#nameInput').value;
-        const email = document.querySelector('input#emailInput').value;
-        const password = document.querySelector('input#passwordInput').value;
-        const confirmPassword = document.querySelector('input#confirmPassword').value;
-
-        console.log(name);
+        console.log('reg');
         
-        const person = {
-            name,
-            email,
-            password,
-            confirmPassword,
-        };
+        const button = document.querySelector('input#regButton');
+        console.log(button);
         
-        console.log(person);
+        button.addEventListener('click', () => {
+            console.log('join');
+            const name = document.querySelector('input#nameInput').value;
+            const email = document.querySelector('input#emailInput').value;
+            const password = document.querySelector('input#passwordInput').value;
+            const confirmPassword = document.querySelector('input#confirmPassword').value;
+    
+            console.log(name);
+            
+            person = {
+                name,
+                email,
+                password,
+                confirmPassword,
+            };
+            
+            console.log(person, 'jjj');
+            
+            cb(person);
+        })
         
-        cb(person);
     }
    
 }
