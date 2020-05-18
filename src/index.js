@@ -9,8 +9,8 @@ import './pages/ModalWindow/styles.less';
 function initialize() {
     const model = new Model(); 
     const regPage = new RegPage();
-    const view = new View(); 
-    const controller = new Controller(model, regPage);
+    const view = new View(regPage); 
+    const controller = new Controller(model, view, regPage);
     
     controller.init();
 }

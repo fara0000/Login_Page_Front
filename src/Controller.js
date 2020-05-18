@@ -1,21 +1,13 @@
 // import RegPage from './pages/RegPage/RegPage';
 
 class Controller {
-    constructor( model, regPage) {
+    constructor( model,view) {
         this._model = model;
-        this.regPage = regPage;
+        this._view = view;
     }
 
     init = () => {
-        this.regPage.init();
-        this.regPage.getRegInputValue(this.checkRegInsertData.bind(this));
-    }
-
-    checkRegInsertData = person => {
-        if(!person) return;
-
-        console.log(person, 'done');
-        
+        this._view.init();
     }
 }
 export default Controller;

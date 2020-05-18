@@ -24,7 +24,6 @@ export default class RegPage {
         this.confirmPassword = construct.createInput({id:'confirmPassword', class: 'registration__params', type: 'password', placeholder: 'Confirm your password...'});
         this.button = construct.createInput({id:'regButton',class: 'registration__submit', type: 'submit'});
         this.button.setAttribute('value', 'Register');
-        this.button.setAttribute('disabled', 'false');
         this._root.appendChild(registration);
         registration.appendChild(title);
         registration.appendChild(form);
@@ -36,32 +35,15 @@ export default class RegPage {
     }
 
     getRegInputValue = cb => {
-        console.log('reg');
-        
-        const button = document.querySelector('input#regButton');
-        console.log(button);
-        
-        button.addEventListener('click', () => {
-            console.log('join');
-            const name = document.querySelector('input#nameInput').value;
-            const email = document.querySelector('input#emailInput').value;
-            const password = document.querySelector('input#passwordInput').value;
-            const confirmPassword = document.querySelector('input#confirmPassword').value;
-    
-            console.log(name);
-            
-            person = {
-                name,
-                email,
-                password,
-                confirmPassword,
-            };
-            
-            console.log(person, 'jjj');
+        this.button.addEventListener('click', () => {
+            const person = {
+                name: this.nameInput.value,
+                email: this.emailInput.value,
+                password: this.passwordInput.value,
+                confirmPassword: confirmPassword.value,
+            }
             
             cb(person);
         })
-        
     }
-   
 }
