@@ -27,7 +27,7 @@ export const  createButton = params => {
     params.onclick && (button.onclick = params.onclick);
 
     return button;
-}  
+}
 
 export const createInput = params => {
     const input = document.createElement('input');
