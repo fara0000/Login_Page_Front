@@ -9,6 +9,7 @@ export default class RegPage {
         this.passwordInput = null;
         this.confirmPassword = null;
         this.button = null;
+        this.modal = new ModalPage();
     }
 
     init = () => {
@@ -64,6 +65,7 @@ export default class RegPage {
         this.confirmPassword.addEventListener('keyup', () => {
             if(this.confirmPassword.value === this.passwordInput.value) {
                 this.confirmPassword.style.borderColor = 'green';
+                this.button.removeAttribute('disabled');
             } else this.confirmPassword.style.borderColor = 'red';
         });
         this.button = construct.createInput({
@@ -72,6 +74,11 @@ export default class RegPage {
             type: 'submit'
         });
         this.button.setAttribute('value', 'REGISTER');
+        this.button.setAttribute('disabled', 'true');
+        this.button.addEventListener('dblclick', () => {
+            this._root.removeChild(registration);
+            this._root.appendChild(this.modal.init());
+        })
 
         this._root.appendChild(registration);
         registration.appendChild(title);
