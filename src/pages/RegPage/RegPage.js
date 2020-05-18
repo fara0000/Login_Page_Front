@@ -64,6 +64,8 @@ export default class RegPage {
         this.confirmPassword.addEventListener('keyup', () => {
             if(this.confirmPassword.value === this.passwordInput.value) {
                 this.confirmPassword.style.borderColor = 'green';
+                this.button.removeAttribute('disabled');
+                console.log('disabled');
             } else this.confirmPassword.style.borderColor = 'red';
         });
         this.button = construct.createInput({
@@ -72,6 +74,7 @@ export default class RegPage {
             type: 'submit'
         });
         this.button.setAttribute('value', 'REGISTER');
+        this.button.setAttribute('disabled', 'true');
 
         this._root.appendChild(registration);
         registration.appendChild(title);
