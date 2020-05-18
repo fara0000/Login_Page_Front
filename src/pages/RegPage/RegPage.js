@@ -25,7 +25,9 @@ export default class RegPage {
           placeholder: 'Enter your name'
         });
         this.nameInput.addEventListener('keyup', () => {
-            if(this.nameInput.value.length > 2) {
+            const username = /^[a-z\d]{3,12}$/i;
+            if(this.nameInput.value.length > 2
+            && this.nameInput.value.match(username)) {
                 this.nameInput.style.borderColor = 'green';
             } else this.nameInput.style.borderColor = 'red';
         });
@@ -36,7 +38,8 @@ export default class RegPage {
           placeholder: 'Enter your email'
         });
         this.emailInput.addEventListener('keyup', () => {
-            if(this.emailInput.value.length > 10) {
+            const email = /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})?$/;
+            if(this.emailInput.value.match(email)) {
                 this.emailInput.style.borderColor = 'green';
             } else this.emailInput.style.borderColor = 'red';
         });
@@ -47,7 +50,8 @@ export default class RegPage {
           placeholder: 'Create your password...'
         });
         this.passwordInput.addEventListener('keyup', () => {
-            if(this.passwordInput.value.length > 6) {
+            const password = /^[\d\w@-]{8,20}$/i;
+            if(this.passwordInput.value.match(password)) {
                 this.passwordInput.style.borderColor = 'green';
             } else this.passwordInput.style.borderColor = 'red';
         });
@@ -58,7 +62,8 @@ export default class RegPage {
           placeholder: 'Confirm your password...'
         });
         this.confirmPassword.addEventListener('keyup', () => {
-            if(this.confirmPassword.value.length > 6) {
+            const secondPassword = /^[\d\w@-]{8,20}$/i;
+            if(this.confirmPassword.value.match(secondPassword)) {
                 this.confirmPassword.style.borderColor = 'green';
             } else this.confirmPassword.style.borderColor = 'red';
         });
