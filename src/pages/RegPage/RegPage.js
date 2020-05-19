@@ -67,7 +67,9 @@ export default class RegPage {
         this.confirmPassword.addEventListener('keyup', () => {
             if(this.confirmPassword.value === this.passwordInput.value) {
                 this.confirmPassword.style.borderColor = 'green';
-                this.button.removeAttribute('disabled');
+                if(this.nameInput.value.length > 2 && this.emailInput.value.length > 6) {
+                    this.button.removeAttribute('disabled');
+                }
             } else this.confirmPassword.style.borderColor = 'red';
         });
         this.button = construct.createInput({
